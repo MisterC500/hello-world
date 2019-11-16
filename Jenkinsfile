@@ -10,7 +10,7 @@ pipeline {
     stage('Test') {
       steps {
         echo "testing"
-        stageMessage "test stage message"
+        stageMessage "test stage message2"
         sleep 25
       }
     }
