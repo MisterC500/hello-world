@@ -30,7 +30,7 @@ jobs:
       - name: Generate tag
         id: tag
         run: |
-          echo ::set-output name=tag::$(jq .version package.json)
+          echo ::set-output name=tag::$(jq -r .version package.json)
           echo ::set-output name=gitTag::$(git describe --tags --abbrev=0)
       - name: Bump version check
         run: |
