@@ -29,8 +29,8 @@ jobs:
         id: tag
         run: |
           echo ::set-output name=tag::$(jq .version package.json)
-
       - name: Bump version check
-        run: echo ${{ steps.tag.outputs.tag }}
-
+        run: |
+          if [ ${{ steps.tag.outputs.tag }} == "v0.0.1" ]; then echo "HERE"
+          fi
 
