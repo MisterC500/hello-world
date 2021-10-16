@@ -37,7 +37,7 @@ jobs:
           if [ ${{ steps.tag.outputs.tag }} == ${{ steps.tag.outputs.gitTag }} ]; then exit 1
           fi
       - name: Create Release
-        uses: liatrio/github-actions/github-release@github-package-actions
+        uses: liatrio/github-actions/github-release@github-release-package-actions
         with:
           owner: 'MisterC500'
           repo:  'hello-world'
