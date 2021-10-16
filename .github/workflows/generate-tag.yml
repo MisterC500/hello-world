@@ -29,11 +29,11 @@ jobs:
         id: tag
         run: |
           echo ::set-output name=tag::$(jq .version package.json)
-          echo ::set-output name=gitTag::$(git describe --tags --match v*.*.* --abbrev=0) 
+          #echo ::set-output name=gitTag::$(git describe --tags --match v*.*.* --abbrev=0) 
 
       - name: Bump version check
         run: |
           echo ${{ steps.output.tag.tag }}
-          echo ${{ steps.output.tag.gitTag }}
+          #echo ${{ steps.output.tag.gitTag }}
 
 
