@@ -32,6 +32,6 @@ jobs:
           echo ::set-output name=gitTag::$(git describe --tags --match v*.*.* --abbrev=0)
       - name: Bump version check
         run: |
-          if [ ${{ steps.tag.outputs.tag }} == ${{steps.tag.outputs.gitTag}} ]; then echo "HERE"
+          if [ ${{ steps.tag.outputs.tag }} == ${{ steps.tag.outputs.gitTag }} ]; then echo "HERE"
           fi
 
