@@ -38,11 +38,11 @@ jobs:
           fi
       - name: Create Release
         uses: liatrio/github-actions/github-release@github-package-actions
-          with:
-            owner: 'MisterC500'
-            repo:  'hello-world'
-            tag_name: ${{ steps.tag.outputs.tag }}
-            name: 'Testing release'
-            token_name: 'token'
-            pat: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          owner: 'MisterC500'
+          repo:  'hello-world'
+          tag_name: ${{ steps.tag.outputs.tag }}
+          name: 'Testing release'
+          token_name: 'token'
+          pat: ${{ secrets.GITHUB_TOKEN }}
 
