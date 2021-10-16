@@ -29,8 +29,9 @@ jobs:
         id: tag
         run: |
           echo ::set-output name=tag::$(jq .version package.json)
+          echo ::set-output name=gitTag::$(git describe --tags --match v*.*.* --abbrev=0)
       - name: Bump version check
         run: |
-          if [ ${{ steps.tag.outputs.tag }} == "v0.0.1" ]; then echo "HERE"
+          if [ ${{ steps.tag.outputs.tag }} == ${{steps.tag.outputs.gitTag}} ]; then echo "HERE"
           fi
 
