@@ -24,12 +24,14 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+        with: 
+          depth: 0  
 
       - name: Generate tag
         id: tag
         run: |
           echo ::set-output name=tag::$(jq .version package.json)
-          echo ::set-output name=gitTag::$(git tag --list)
+          echo ::set-output name=gitTag::$(git describe --tags --abbrev=0)
       - name: Bump version check
         run: |
           if [ ${{ steps.tag.outputs.tag }} == ${{ steps.tag.outputs.gitTag }} ]; then echo "HERE"
