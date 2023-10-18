@@ -1,0 +1,10 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: hello-world
+  annotations:
+    github.com/project-slug: MisterC500/hello-world
+spec:
+  type: other
+  lifecycle: unknown
+  owner: backstage-foundations
